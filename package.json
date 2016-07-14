@@ -1,0 +1,25 @@
+{
+  "name": "moonrhythm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^0.23.0",
+    "file-loader": "^0.8.5",
+    "gulp": "^3.9.0",
+    "image-webpack-loader": "^1.6.2",
+    "script-loader": "^0.6.1",
+    "style-loader": "^0.13.0",
+    "typeit": "^1.1.1",
+    "webpack": "^1.12.9"
+  },
+  "dependencies": {
+    "jquery": "^2.1.4",
+    "jquery.easing": "^1.3.2"
+  }
+}
