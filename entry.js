@@ -1,7 +1,7 @@
 require('./bower_components/bootstrap/dist/css/bootstrap.min.css');
 require('./bower_components/font-awesome/css/font-awesome.min.css');
 require('./bower_components/lato/css/lato.min.css');
-require('./bower_components/octicons/octicons/octicons.css');
+//require('./bower_components/octicons/build/octicons.css');
 require('./css/fonts.css');
 require('./node_modules/typeit/dist/typeit.min.css');
 require('./css/app.css');
