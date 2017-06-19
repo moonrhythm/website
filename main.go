@@ -6,6 +6,8 @@ import (
 	"log"
 	"net/http"
 
+	"fmt"
+
 	"github.com/acoshift/header"
 	"github.com/tdewolff/minify"
 	"github.com/tdewolff/minify/css"
@@ -37,6 +39,9 @@ func main() {
 	http.HandleFunc("/favicon.ico", func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set(header.CacheControl, "public, max-age=86400")
 		http.ServeFile(w, r, "static/favicon.png")
+	})
+	http.HandleFunc("/healthz", func(w http.ResponseWriter, r *http.Request) {
+		fmt.Fprintf(w, "OK")
 	})
 
 	log.Println("start server at :8080")

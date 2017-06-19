@@ -1,0 +1,9 @@
+package: github.com/acoshift/moonrhythm
+import:
+- package: github.com/acoshift/header
+- package: github.com/tdewolff/minify
+  version: ^2.1.0
+  subpackages:
+  - css
+  - html
+  - js
