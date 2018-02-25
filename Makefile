@@ -6,7 +6,7 @@ dev:
 	live-server --mount=/:assets/ src/
 
 deploy: clean build
-	gsutil -m rm -rf gs://www.moonrhythm.io/*
+	gsutil -m rm -rf gs://www.moonrhythm.io/**
 	gsutil -m -h "Cache-Control: public, max-age=31536000" cp -r assets/* gs://www.moonrhythm.io
 	gsutil \
 		-m \
