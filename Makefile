@@ -5,15 +5,12 @@ default:
 dev:
 	live-server src/
 
-deploy: clean build assets
+deploy: clean build
+	gsutil -m -h "Cache-Control:public, max-age=31536000" cp -r static/* gs://www.moonrhythm.io
 	gsutil -m -h "Cache-Control:public, max-age=3600" cp -r build/* gs://www.moonrhythm.io
 
 clean:
 	rm -rf build/
-
-assets:
-	mkdir -p build
-	cp -r static/* build/
 
 .PHONY: build
 build:
