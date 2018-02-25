@@ -6,8 +6,13 @@ dev:
 	live-server --mount=/:assets/ src/
 
 deploy: clean build
-	gsutil -m -h "Cache-Control:public, max-age=31536000" cp -r assets/* gs://www.moonrhythm.io
-	gsutil -m -h "Cache-Control:public, max-age=3600" cp -r build/* gs://www.moonrhythm.io
+	gsutil -m rm -rf gs://www.moonrhythm.io/*
+	gsutil -m -h "Cache-Control: public, max-age=31536000" cp -r assets/* gs://www.moonrhythm.io
+	gsutil \
+		-m \
+		-h "Cache-Control: public, max-age=3600" \
+		-h "Content-Type: text/html" \
+		cp -r build/* gs://www.moonrhythm.io
 
 clean:
 	rm -rf build/
@@ -33,6 +38,7 @@ build:
 		--remove-tag-whitespace \
 		--input-dir src \
 		--output-dir build
+	find build -name '*.html' | while read f; do mv "$$f" "$${f%.html}"; done
 
 setup:
 	npm install -g live-server html-minifier
