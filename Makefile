@@ -5,13 +5,19 @@ default:
 dev:
 	live-server src/
 
-deploy: cluster patch
+deploy: clean build assets
+	gsutil cp -r build/* gs://www.moonrhythm.io
 
 clean:
 	rm -rf build/
 
+assets:
+	mkdir -p build
+	cp -r static/* build/
+
 .PHONY: build
 build:
+	mkdir -p build
 	html-minifier \
 		--html5 \
 		--collapse-boolean-attributes \
