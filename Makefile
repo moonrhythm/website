@@ -3,7 +3,7 @@ default:
 	# `make dev` starts server in localhost:8080
 
 dev:
-	live-server src/
+	live-server --mount=/:assets/ src/
 
 deploy: clean build
 	gsutil -m -h "Cache-Control:public, max-age=31536000" cp -r assets/* gs://www.moonrhythm.io
