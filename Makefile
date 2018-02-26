@@ -1,3 +1,5 @@
+WEB=www.moonrhythm.io
+
 default:
 	# `make deploy` build and deploy to production
 	# `make dev` starts server in localhost:8080
@@ -6,13 +8,13 @@ dev:
 	live-server --mount=/:assets/ src/
 
 deploy: clean build
-	gsutil -m rm -rf gs://www.moonrhythm.io/**
-	gsutil -m -h "Cache-Control: public, max-age=31536000" cp -r assets/* gs://www.moonrhythm.io
+	-gsutil -m rm -rf gs://$(WEB)/**
+	gsutil -m -h "Cache-Control: public, max-age=31536000" cp -r assets/* gs://$(WEB)
 	gsutil \
 		-m \
 		-h "Cache-Control: public, max-age=3600" \
 		-h "Content-Type: text/html" \
-		cp -r build/* gs://www.moonrhythm.io
+		cp -r build/* gs://$(WEB)
 
 clean:
 	rm -rf build/
