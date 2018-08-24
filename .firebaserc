@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "acoshift-1362"
+  },
+  "targets": {
+    "acoshift-1362": {
+      "hosting": {
+        "default": [
+          "moonrhythm"
+        ]
+      }
+    }
+  }
+}
