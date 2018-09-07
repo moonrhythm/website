@@ -1,0 +1,25 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:moonrhythm/website.git",
+  "author": "Moon Rhythm",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "dev": "live-server --mount=/:assets/ src/",
+    "build:clean": "rm -rf public/",
+    "build:prepare": "mkdir -p public",
+    "build:assets": "cp -r assets/* public/",
+    "build:html": "html-minifier --collapse-boolean-attributes --collapse-inline-tag-whitespace --collapse-whitespace --minify-css --minify-js --minify-urls --remove-attribute-quotes --remove-comments --remove-empty-attributes --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-style-link-type-attributes --remove-tag-whitespace --input-dir src --output-dir public",
+    "build": "yarn build:clean && yarn build:prepare && yarn build:assets && yarn build:html",
+    "deploy": "firebase deploy --token $FIREBASE_TOKEN"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.0"
+  },
+  "dependencies": {
+    "firebase-tools": "^4.2.1",
+    "html-minifier": "^3.5.20"
+  }
+}
