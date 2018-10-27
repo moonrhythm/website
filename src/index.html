@@ -1,587 +1,551 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Moon Rhythm</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" href="/0971958d-7be2-46c3-b299-721d606b8ed0.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <style>
-body {
-    overflow-x: hidden;
-    font-family: 'Lato';
-}
-
-p {
-    font-size: 20px;
-}
-
-p.small {
-    font-size: 16px;
-}
-
-a,
-a:hover,
-a:focus,
-a:active,
-a.active {
-    outline: 0;
-    color: #18bc9c;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 700;
-}
-
-.row div h2 {
-  text-transform: uppercase;
-}
-
-hr.star-light,
-hr.star-primary {
-    margin: 25px auto 30px;
-    padding: 0;
-    max-width: 250px;
-    border: 0;
-    border-top: solid 5px;
-    text-align: center;
-}
-
-hr.star-light:after,
-hr.star-primary:after {
-    content: "\f005";
-    display: inline-block;
-    position: relative;
-    top: -.8em;
-    padding: 0 .25em;
-    font-family: FontAwesome;
-    font-size: 2em;
-}
-
-hr.star-light {
-    border-color: #fff;
-}
-
-hr.star-light:after {
-    color: #fff;
-    background-color: #505050; /*#18bc9c*/
-}
-
-hr.star-primary {
-    border-color: #505050; /* #2c3e50 */
-}
-
-hr.star-primary:after {
-    color: #505050; /* #2c3e50 */
-    background-color: #fff;
-}
-
-.img-centered {
-    margin: 0 auto;
-}
-
-header {
-    text-align: center;
-    color: #fff;
-    background: #505050;
-}
-
-header .container {
-    padding-top: 100px;
-    padding-bottom: 50px;
-}
-
-header img {
-    display: block;
-    margin: 0 auto 20px;
-}
-/*
-header .intro-text .name {
-    display: block;
-    text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 2em;
-    font-weight: 700;
-}
-
-header .intro-text .skills {
-    font-size: 1.25em;
-    font-weight: 300;
-}
-*/
-@media(min-width:768px) {
-    header .container {
-        padding-top: 200px;
-        padding-bottom: 100px;
-    }
-
-    header .intro-text .name {
-        font-size: 4.75em;
-    }
-
-    header .intro-text .skills {
-        font-size: 1.75em;
-    }
-}
-
-@media(min-width:768px) {
-    .navbar-fixed-top {
-        padding: 25px 0;
-        -webkit-transition: padding .3s;
-        -moz-transition: padding .3s;
-        transition: padding .3s;
-    }
-
-    .navbar-fixed-top .navbar-brand {
-        font-size: 2em;
-        -webkit-transition: all .3s;
-        -moz-transition: all .3s;
-        transition: all .3s;
-    }
-
-    .navbar-fixed-top.navbar-shrink {
-        padding: 10px 0;
-    }
-
-    .navbar-fixed-top.navbar-shrink .navbar-brand {
-        font-size: 1.5em;
-    }
-}
-
-.navbar {
-    text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 700;
-}
-
-.navbar-default .navbar-brand {
-  color: #bbb;
-}
-
-.navbar-default .navbar-brand:hover,
-.navbar-default .navbar-brand:focus {
-    color: #fff;
-}
-
-.navbar-default .navbar-nav > li > a {
-  color: #bbb;
-}
-
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-    color: #fff;
-}
-
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:hover,
-.navbar-default .navbar-nav > .active > a:focus {
-    color: #303030;
-    background-color: #fff;
-}
-
-.navbar a:focus {
-    outline: 0;
-}
-
-.navbar .navbar-nav {
-    letter-spacing: 1px;
-}
-
-.navbar .navbar-nav li a:focus {
-    outline: 0;
-}
-
-.navbar-default {
-    background-color: #303030;
-    border-color: transparent;
-}
-
-.navbar-default,
-.navbar-inverse {
-    border: 0;
-}
-
-section {
-    padding: 100px 0;
-}
-
-section h2 {
-    margin: 0;
-    font-size: 3em;
-}
-
-section.success {
-    color: #fff;
-    background: #505050; /* #18bc9c */
-}
-
-section.success a,
-section.success a:hover,
-section.success a:focus,
-section.success a:active,
-section.success a.active {
-    outline: 0;
-    color: #303030; /* #2c3e50; */
-}
-
-@media(max-width:767px) {
-    section {
-        padding: 75px 0;
-    }
-
-    section.first {
-        padding-top: 75px;
-    }
-}
-
-#services * {
-    z-index: 2;
-}
-
-.btn-primary {
-  background-color: #404040;
-  border-color: #404040;
-}
-
-.btn-primary:hover {
-  background-color: #202030;
-  border-color: #202030;
-}
-
-.btn-outline {
-    margin-top: 15px;
-    border: solid 2px #fff;
-    font-size: 20px;
-    color: #fff;
-    background: 0 0;
-    transition: all .3s ease-in-out;
-}
-
-.btn-outline:hover,
-.btn-outline:focus,
-.btn-outline:active,
-.btn-outline.active {
-    border: solid 2px #fff;
-    color: #303030;
-    background: #fff;
-}
-
-.floating-label-form-group {
-    position: relative;
-    margin-bottom: 0;
-    padding-bottom: .5em;
-    border-bottom: 1px solid #505050; /* #eee; */
-}
-
-.floating-label-form-group input,
-.floating-label-form-group textarea {
-    z-index: 1;
-    position: relative;
-    padding-right: 0;
-    padding-left: 0;
-    border: 0;
-    border-radius: 0;
-    font-size: 1.5em;
-    background: 0 0;
-    box-shadow: none!important;
-    resize: none;
-}
-
-.floating-label-form-group label {
-    display: block;
-    z-index: 0;
-    position: relative;
-    top: 2em;
-    margin: 0;
-    font-size: .85em;
-    line-height: 1.764705882em;
-    vertical-align: middle;
-    vertical-align: baseline;
-    opacity: 0;
-    -webkit-transition: top .3s ease,opacity .3s ease;
-    -moz-transition: top .3s ease,opacity .3s ease;
-    -ms-transition: top .3s ease,opacity .3s ease;
-    transition: top .3s ease,opacity .3s ease;
-}
-
-.floating-label-form-group::not(:first-child) {
-    padding-left: 14px;
-    border-left: 1px solid #eee;
-}
-
-.floating-label-form-group-with-value label {
-    top: 0;
-    opacity: 1;
-}
-
-.floating-label-form-group-with-focus label {
-    color: #18bc9c;
-}
-
-form .row:first-child .floating-label-form-group {
-    border-top: 1px solid #eee;
-}
-
-footer {
-    color: #fff;
-}
-
-footer h3 {
-    margin-bottom: 30px;
-}
-
-footer .footer-above {
-    padding-top: 50px;
-    background-color: #303030; /* #2c3e50; */
-}
-
-footer .footer-col {
-    margin-bottom: 50px;
-}
-
-footer .footer-below {
-    padding: 25px 0;
-    background-color: #303030; /* #233140; */
-}
-
-.btn-social {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    border: 2px solid #fff;
-    border-radius: 100%;
-    text-align: center;
-    font-size: 20px;
-    line-height: 45px;
-}
-
-.btn:focus,
-.btn:active,
-.btn.active {
-    outline: 0;
-}
-
-.btn-success {
-  color: #fff;
-  background-color: #606060;
-  border-color: #606060;
-}
-
-.btn-success:hover {
-  background-color: #303030;
-  border-color: #303030;
-}
-
-.btn-success:active, .btn-success:focus, .btn-success:visited {
-  background: #000 !important;
-  border-color: #000 !important;
-}
-
-.scroll-top {
-    z-index: 1049;
-    position: fixed;
-    right: 2%;
-    bottom: 2%;
-    width: 50px;
-    height: 50px;
-}
-
-.scroll-top .btn {
-    width: 50px;
-    height: 50px;
-    border-radius: 100%;
-    font-size: 20px;
-    line-height: 28px;
-}
-
-.scroll-top .btn:focus {
-    outline: 0;
-}
-
-.service-h {
-    color: #505050;
-}
-
-.service-wrap {
-    margin: 0 auto;
-    overflow: hidden;
-    display: block;
-}
-
-.services {
-    padding-top: 40px;
-}
-
-.service {
-    text-align: center;
-    line-height: 1.5;
-    padding-bottom: 10px;
-    right: 0;
-    margin: 0 0 15px;
-}
-
-.service-circle {
-    border-radius: 999px;
-    margin: 0 auto;
-    height: 80px;
-    width: 80px;
-    background-color: #303030;
-    line-height: 80px;
-}
-
-h4 {
-    display: block;
-    padding-top: 20px;
-    padding-bottom: 10px;
-}
-
-.material-icons {
-    vertical-align: middle;
-    display: inline-block;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-.mega-octicon {
-    vertical-align: middle;
-    display: inline-block;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-.material-icons.md-18 { font-size: 18px; }
-.material-icons.md-24 { font-size: 24px; }
-.material-icons.md-36 { font-size: 36px; }
-.material-icons.md-48 { font-size: 48px; }
-.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
-.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
-.material-icons.md-light, .mega-octicon.md-light { color: rgba(255, 255, 255, 1); }
-.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
-
-#we-are-div {
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 700;
-    font-size: 3em;
-}
-    </style>
-  </head>
-  <body>
-    <div id="page-top"></div>
-      <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-          <div class="navbar-header page-scroll">
-            <a class="navbar-brand" href="#page-top">Moon Rhythm</a>
-          </div>
-        </div>
-      </nav>
-
-      <header>
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              <img class="img-responsive" id="logo" src="/2d4de6ae-f36d-42a7-9d8e-6dfcef172e9f.png" alt="logo">
-            </div>
-          </div>
-        </div>
-      </header>
-
-      <section id="services">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12 text-center">
-              <h2 class="service-h">Services</h2>
-              <hr class="star-primary">
-            </div>
-          </div>
-          <div class="col-lg-12 row services">
-            <div class="service-wrap">
-              <div class="col-sm-6 service">
-                <div class="service-circle">
-                  <i class="material-icons md-36 md-light">web_asset</i>
-                </div>
-                <h4>Web Services</h4>
-                <p>High quality web service or microservice for your website or application.</p>
-              </div>
-              <div class="col-sm-6 service">
-                <div class="service-circle">
-                  <i class="material-icons md-36 md-light">web_asset</i>
-                </div>
-                <h4>Applications</h4>
-                <p>High quality web, mobile, and desktop applications.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="success" id="about">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12 text-center">
-              <h2>About</h2>
-              <hr class="star-light">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 text-center">
-              <p>Moon Rhythm is a software development team, established in 2010 around the internet.<br> We provide top quality
-                services with love.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <footer class="text-center">
-        <div class="footer-above">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-2"></div>
-              <div class="footer-col col-md-4">
-                <h3>Contact</h3>
-                <p>43 Kaeo Ngoen Thong 44, Taling Chan<br>Bangkok, Thailand 10170</p>
-                <p>contact@moonrhythm.io</p>
-              </div>
-              <div class="footer-col col-md-4">
-                <h3>Around the Web</h3>
-                <ul class="list-inline">
-                  <li>
-                    <a href="https://www.facebook.com/mnrytm/" class="btn-social btn-outline" target="_blank"><i class="fa fa-fw fa-facebook"></i></a>
-                  </li>
-                  <li>
-                    <a href="https://plus.google.com/+MoonrhythmInfo" class="btn-social btn-outline" target="_blank"><i class="fa fa-fw fa-google-plus"></i></a>
-                  </li>
-                </ul>
-              </div>
-              <div class="col-md-2"></div>
-            </div>
-          </div>
-        </div>
-        <div class="footer-below">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-12">
-                Copyright &copy; Moon Rhythm 2010 - 2018
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
-  </body>
-</html>
+<meta charset="utf-8">
+<title>Moon Rhythm</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="/0971958d-7be2-46c3-b299-721d606b8ed0.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<style>
+	body {
+		overflow-x: hidden;
+		font-family: 'Lato';
+	}
+
+	p {
+		font-size: 20px;
+	}
+
+	p.small {
+		font-size: 16px;
+	}
+
+	a, a:hover, a:focus, a:active, a.active {
+		outline: 0;
+		color: #18bc9c;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+		font-weight: 700;
+	}
+
+	.row div h2 {
+	text-transform: uppercase;
+	}
+
+	hr.star-light,
+	hr.star-primary {
+		margin: 25px auto 30px;
+		padding: 0;
+		max-width: 250px;
+		border: 0;
+		border-top: solid 5px;
+		text-align: center;
+	}
+
+	hr.star-light:after,
+	hr.star-primary:after {
+		content: "\f005";
+		display: inline-block;
+		position: relative;
+		top: -.8em;
+		padding: 0 .25em;
+		font-family: FontAwesome;
+		font-size: 2em;
+	}
+
+	hr.star-light {
+		border-color: #fff;
+	}
+
+	hr.star-light:after {
+		color: #fff;
+		background-color: #505050; /*#18bc9c*/
+	}
+
+	hr.star-primary {
+		border-color: #505050; /* #2c3e50 */
+	}
+
+	hr.star-primary:after {
+		color: #505050; /* #2c3e50 */
+		background-color: #fff;
+	}
+
+	.img-centered {
+		margin: 0 auto;
+	}
+
+	header {
+		text-align: center;
+		color: #fff;
+		background: #505050;
+	}
+
+	header .container {
+		padding-top: 100px;
+		padding-bottom: 50px;
+	}
+
+	header img {
+		display: block;
+		margin: 0 auto 20px;
+	}
+
+	@media(min-width:768px) {
+		header .container {
+			padding-top: 200px;
+			padding-bottom: 100px;
+		}
+
+		header .intro-text .name {
+			font-size: 4.75em;
+		}
+
+		header .intro-text .skills {
+			font-size: 1.75em;
+		}
+	}
+
+	@media(min-width:768px) {
+		.navbar-fixed-top {
+			padding: 25px 0;
+			-webkit-transition: padding .3s;
+			-moz-transition: padding .3s;
+			transition: padding .3s;
+		}
+
+		.navbar-fixed-top .navbar-brand {
+			font-size: 2em;
+			-webkit-transition: all .3s;
+			-moz-transition: all .3s;
+			transition: all .3s;
+		}
+
+		.navbar-fixed-top.navbar-shrink {
+			padding: 10px 0;
+		}
+
+		.navbar-fixed-top.navbar-shrink .navbar-brand {
+			font-size: 1.5em;
+		}
+	}
+
+	.navbar {
+		text-transform: uppercase;
+		font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+		font-weight: 700;
+	}
+
+	.navbar-default .navbar-brand {
+		color: #bbb;
+	}
+
+	.navbar-default .navbar-brand:hover,
+	.navbar-default .navbar-brand:focus {
+		color: #fff;
+	}
+
+	.navbar-default .navbar-nav > li > a {
+	color: #bbb;
+	}
+
+	.navbar-default .navbar-nav > li > a:hover,
+	.navbar-default .navbar-nav > li > a:focus {
+		color: #fff;
+	}
+
+	.navbar-default .navbar-nav > .active > a,
+	.navbar-default .navbar-nav > .active > a:hover,
+	.navbar-default .navbar-nav > .active > a:focus {
+		color: #303030;
+		background-color: #fff;
+	}
+
+	.navbar a:focus {
+		outline: 0;
+	}
+
+	.navbar .navbar-nav {
+		letter-spacing: 1px;
+	}
+
+	.navbar .navbar-nav li a:focus {
+		outline: 0;
+	}
+
+	.navbar-default {
+		background-color: #303030;
+		border-color: transparent;
+	}
+
+	.navbar-default,
+	.navbar-inverse {
+		border: 0;
+	}
+
+	section {
+		padding: 100px 0;
+	}
+
+	section h2 {
+		margin: 0;
+		font-size: 3em;
+	}
+
+	section.success {
+		color: #fff;
+		background: #505050; /* #18bc9c */
+	}
+
+	section.success a,
+	section.success a:hover,
+	section.success a:focus,
+	section.success a:active,
+	section.success a.active {
+		outline: 0;
+		color: #303030; /* #2c3e50; */
+	}
+
+	@media(max-width:767px) {
+		section {
+			padding: 75px 0;
+		}
+
+		section.first {
+			padding-top: 75px;
+		}
+	}
+
+	#services * {
+		z-index: 2;
+	}
+
+	.btn-primary {
+		background-color: #404040;
+		border-color: #404040;
+	}
+
+	.btn-primary:hover {
+		background-color: #202030;
+		border-color: #202030;
+	}
+
+	.btn-outline {
+		margin-top: 15px;
+		border: solid 2px #fff;
+		font-size: 20px;
+		color: #fff;
+		background: 0 0;
+		transition: all .3s ease-in-out;
+	}
+
+	.btn-outline:hover,
+	.btn-outline:focus,
+	.btn-outline:active,
+	.btn-outline.active {
+		border: solid 2px #fff;
+		color: #303030;
+		background: #fff;
+	}
+
+	.floating-label-form-group {
+		position: relative;
+		margin-bottom: 0;
+		padding-bottom: .5em;
+		border-bottom: 1px solid #505050; /* #eee; */
+	}
+
+	.floating-label-form-group input,
+	.floating-label-form-group textarea {
+		z-index: 1;
+		position: relative;
+		padding-right: 0;
+		padding-left: 0;
+		border: 0;
+		border-radius: 0;
+		font-size: 1.5em;
+		background: 0 0;
+		box-shadow: none!important;
+		resize: none;
+	}
+
+	.floating-label-form-group label {
+		display: block;
+		z-index: 0;
+		position: relative;
+		top: 2em;
+		margin: 0;
+		font-size: .85em;
+		line-height: 1.764705882em;
+		vertical-align: middle;
+		vertical-align: baseline;
+		opacity: 0;
+		-webkit-transition: top .3s ease,opacity .3s ease;
+		-moz-transition: top .3s ease,opacity .3s ease;
+		-ms-transition: top .3s ease,opacity .3s ease;
+		transition: top .3s ease,opacity .3s ease;
+	}
+
+	.floating-label-form-group::not(:first-child) {
+		padding-left: 14px;
+		border-left: 1px solid #eee;
+	}
+
+	.floating-label-form-group-with-value label {
+		top: 0;
+		opacity: 1;
+	}
+
+	.floating-label-form-group-with-focus label {
+		color: #18bc9c;
+	}
+
+	form .row:first-child .floating-label-form-group {
+		border-top: 1px solid #eee;
+	}
+
+	footer {
+		color: #fff;
+	}
+
+	footer h3 {
+		margin-bottom: 30px;
+	}
+
+	footer .footer-above {
+		padding-top: 50px;
+		background-color: #303030; /* #2c3e50; */
+	}
+
+	footer .footer-col {
+		margin-bottom: 50px;
+	}
+
+	footer .footer-below {
+		padding: 25px 0;
+		background-color: #303030; /* #233140; */
+	}
+
+	.btn-social {
+		display: inline-block;
+		width: 50px;
+		height: 50px;
+		border: 2px solid #fff;
+		border-radius: 100%;
+		text-align: center;
+		font-size: 20px;
+		line-height: 45px;
+	}
+
+	.btn:focus,
+	.btn:active,
+	.btn.active {
+		outline: 0;
+	}
+
+	.btn-success {
+		color: #fff;
+		background-color: #606060;
+		border-color: #606060;
+	}
+
+	.btn-success:hover {
+		background-color: #303030;
+		border-color: #303030;
+	}
+
+	.btn-success:active, .btn-success:focus, .btn-success:visited {
+		background: #000 !important;
+		border-color: #000 !important;
+	}
+
+	.scroll-top {
+		z-index: 1049;
+		position: fixed;
+		right: 2%;
+		bottom: 2%;
+		width: 50px;
+		height: 50px;
+	}
+
+	.scroll-top .btn {
+		width: 50px;
+		height: 50px;
+		border-radius: 100%;
+		font-size: 20px;
+		line-height: 28px;
+	}
+
+	.scroll-top .btn:focus {
+		outline: 0;
+	}
+
+	.service-h {
+		color: #505050;
+	}
+
+	.service-wrap {
+		margin: 0 auto;
+		overflow: hidden;
+		display: block;
+	}
+
+	.services {
+		padding-top: 40px;
+	}
+
+	.service {
+		text-align: center;
+		line-height: 1.5;
+		padding-bottom: 10px;
+		right: 0;
+		margin: 0 0 15px;
+	}
+
+	.service-circle {
+		border-radius: 999px;
+		margin: 0 auto;
+		height: 80px;
+		width: 80px;
+		background-color: #303030;
+		line-height: 80px;
+	}
+
+	h4 {
+		display: block;
+		padding-top: 20px;
+		padding-bottom: 10px;
+	}
+
+	.material-icons {
+		vertical-align: middle;
+		display: inline-block;
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+
+	.mega-octicon {
+		vertical-align: middle;
+		display: inline-block;
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+
+	.material-icons.md-18 { font-size: 18px; }
+	.material-icons.md-24 { font-size: 24px; }
+	.material-icons.md-36 { font-size: 36px; }
+	.material-icons.md-48 { font-size: 48px; }
+	.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+	.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+	.material-icons.md-light, .mega-octicon.md-light { color: rgba(255, 255, 255, 1); }
+	.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+</style>
+
+<div id="top"></div>
+<nav class="navbar navbar-default navbar-fixed-top">
+<div class="container">
+	<div class="navbar-header page-scroll">
+		<a class="navbar-brand" href="#top">Moon Rhythm</a>
+	</div>
+</div>
+</nav>
+
+<header>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<img class="img-responsive" id="logo" src="/2d4de6ae-f36d-42a7-9d8e-6dfcef172e9f.png" alt="logo">
+			</div>
+		</div>
+	</div>
+</header>
+
+<section id="services">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h2 class="service-h">Services</h2>
+				<hr class="star-primary">
+			</div>
+		</div>
+		<div class="col-lg-12 row services">
+			<div class="service-wrap">
+				<div class="col-sm-6 service">
+					<div class="service-circle">
+						<i class="material-icons md-36 md-light">web_asset</i>
+					</div>
+					<h4>Web Services</h4>
+					<p>High quality web service or microservice for your website or application.</p>
+				</div>
+				<div class="col-sm-6 service">
+					<div class="service-circle">
+						<i class="material-icons md-36 md-light">web_asset</i>
+					</div>
+					<h4>Applications</h4>
+					<p>High quality web, mobile, and desktop applications.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="success" id="about">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h2>About</h2>
+				<hr class="star-light">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 text-center">
+				<p>Moon Rhythm is a software development team, established in 2010 around the internet.<br> We provide top quality
+				services with love.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<footer class="text-center">
+	<div class="footer-above">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-2"></div>
+				<div class="footer-col col-md-4">
+					<h3>Contact</h3>
+					<p>43 Kaeo Ngoen Thong 44, Taling Chan<br>Bangkok, Thailand 10170</p>
+					<p>contact@moonrhythm.io</p>
+				</div>
+				<div class="footer-col col-md-4">
+					<h3>Around the Web</h3>
+					<ul class="list-inline">
+						<li><a href="https://www.facebook.com/mnrytm/" class="btn-social btn-outline" target="_blank"><i class="fa fa-fw fa-facebook"></i></a>
+						<li><a href="https://plus.google.com/+MoonrhythmInfo" class="btn-social btn-outline" target="_blank"><i class="fa fa-fw fa-google-plus"></i></a>
+					</ul>
+				</div>
+				<div class="col-md-2"></div>
+			</div>
+		</div>
+	</div>
+	<div class="footer-below">
+		<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				Copyright &copy; Moon Rhythm 2010 - 2018
+			</div>
+		</div>
+		</div>
+	</div>
+</footer>
