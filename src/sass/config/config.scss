@@ -1,49 +1,9 @@
+@import '_reset';
 
-// Responsive Breakpoint
-$breakpoint-sm: 770px;
-$breakpoint-md: 1000px;
-$breakpoint-lg: 1300px;
+@import '_breakpoint';
+@import '_color';
+@import '_radius';
+@import '_spacing';
+@import '_typography';
 
-//  Font Family
-$font-primary: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-$font-secondary: "Poppins", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-
-//  Mapping Value
-$pixel-value: (
-	'0px': 0px,
-	'50pct': 50%,
-	'100pct': 100%,
-	'100vw': 100vw,
-	'100vh': 100vh,
-	'at': auto
-);
-
-$border-radius-value: (
-	'0px': 0px,
-	'max': 9999px
-);
-
-// Percentage Value for Width, Height
-$percentage-value: (
-	'25pct': 25%,
-	'50pct': 50%,
-	'75pct': 75%,
-	'80pct': 80%,
-	'90pct': 90%,
-	'100pct': 100%,
-	'at': auto
-);
-
-$color-value: (
-	'crcl': currentColor,
-	'tpr': transparent
-);
-
-// Document Default
-html {
-	color: #000;
-	font-family: $font-primary;
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-font-smoothing: antialiased;
-	text-rendering: optimizeLegibility;
-}
+@import '_initial';

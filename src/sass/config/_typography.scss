@@ -1,0 +1,25 @@
+$font-primary: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+$font-secondary: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+
+$font-families: (
+	'primary': $font-primary, /* REQUIRED */
+	'secondary': $font-secondary /* REQUIRED */
+);
+
+$font-sizes: (
+	'1': 3rem,
+	'2': 2.5rem,
+	'3': 2rem,
+	'4': 1.5rem,
+	'5': 1.125rem,
+	'6': 1rem,
+	'7': 0.85rem,
+	'8': 0.70rem
+);
+
+ $h1: 3rem;
+ $h2: 2.5rem;
+ $h3: 2rem;
+ $h4: 1.5rem;
+ $h5: 1.125rem;
+ $h6: 1rem;

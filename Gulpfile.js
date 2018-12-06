@@ -6,7 +6,7 @@ const rename = require('gulp-rename');
 const output = './assets/css'
 const sassOption = {
 	outputStyle: 'compressed',
-	includePaths: 'node_modules/'
+	includePaths: 'node_modules'
 }
 
 gulp.task('dev', function () {
@@ -16,7 +16,7 @@ gulp.task('dev', function () {
 function build(source, basename, compress = false, suffix = '.min') {
 	sassOption.outputStyle = compress == true ? 'compressed' : 'expanded'
 	gulp.src(source)
-	.pipe(sass({outputStyle: sassOption}).on('error', sass.logError))
+	.pipe(sass(sassOption).on('error', sass.logError))
 	.pipe(autoprefixer({
 		browsers: ['last 2 versions']
 	}))
