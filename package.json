@@ -16,9 +16,14 @@
     "deploy": "firebase deploy --token $FIREBASE_TOKEN"
   },
   "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
     "live-server": "^1.2.0"
   },
   "dependencies": {
+    "biomatic": "^0.3.8",
     "firebase-tools": "^4.2.1",
     "html-minifier": "^3.5.20"
   }
