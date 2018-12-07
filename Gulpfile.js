@@ -24,7 +24,7 @@ function build(source, basename, compress = false, suffix = '.min') {
 	sassOption.outputStyle = compress == true ? 'compressed' : 'expanded'
 	gulp.src(source)
 	.pipe(sass(sassOption).on('error', sass.logError))
-	.pipe(purgecss({ content: ['./src/**/*.html'] }))
+	// .pipe(purgecss({ content: ['./src/**/*.html'] }))
 	.pipe(autoprefixer({
 		browsers: ['last 2 versions']
 	}))

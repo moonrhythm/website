@@ -28,7 +28,7 @@
 		<div class="_dp-f _fdrt-cl _fdrt-r-md _mgt-24px">
 			<div class="_f-1 _bdtw-1px _bdcl-title-second _mgr-120px _mgr-40px-md _mgt-10px-md animated fadeInUp is-fade-0"></div>
 			<div class="_f-1 _mgt-16px _mgt-0px-md">
-				<p class="_cl-subtitle animated fadeIn is-fade-4">
+				<p class="_cl-subtitle animated fadeInUp is-fade-0">
 					Moon Rhythm is a software development team, established in 2010 around the internet.<br>
 					We provide top quality services with love.
 				</p>
@@ -40,9 +40,9 @@
 	</a>
 </section>
 
-<section id="service" class="_dp-f _alit-ct _fdrt-cl _pdv-50px container">
+<section id="service" class="_dp-f _alit-ct _fdrt-cl _pdv-120px container">
 	<h2 class="_cl-subtitle moon-spacing _fs-6 _fw-bold _mgbt-16px">Service</h2>
-	<h4 class="_cl-title _fw-bold _fs-4 _tal-ct _fs-2-md _mgbt-80px _mgbt-120px-md">DELIVERING QUALITY SERVICES.</h4>
+	<h4 class="_cl-title _fw-bold _fs-4 _tal-ct _fs-2-md _mgbt-80px _mgbt-120px-md moon-spacing-1">DELIVERING QUALITY SERVICES.</h4>
 
 	<div class="service-box _mgbt-80px _mgbt-120px-md">
 		<h3 class="service-title">Moon Rhythm Service 1</h3>
@@ -68,7 +68,7 @@
 </section>
 
 <section class="contact container _dp-f _alit-ct _fdrt-cl _mgbt-120px">
-	<h2 class="_cl-title _fs-4 _fs-2-md _mgbt-16px _dp-f _alit-ct">
+	<h2 class="_cl-title _fs-4 _fs-2-md moon-spacing-1 _mgbt-16px _dp-f _alit-ct">
 		CONTACT US
 		<img class="_mgl-16px" src="/images/sent-mail.png" alt="send mail" width="28px" height="28px">
 	</h2>
@@ -94,10 +94,9 @@
 		</p>
 		<div class="_dp-f _jtfct-spbtw _fdrt-cl _fdrt-r-md">
 			<div class="_cl-subtitle-second _fs-7 _fw-300 _lh-150pct">
-				Copyright © 2010 - 2018 <span class="_fw-700">Moonrhythm Rhythm.</span> All rights reserved.
+				Copyright © 2010 - 2018 <span class="_fw-700">Moon Rhythm.</span> All rights reserved.
 			</div>
 			<a class="_cl-subtitle-second _cl-title-hover _fs-7 _mgt-24px _mgt-0px-md" href="mailto:contact@moonrhythm.io">
-				<img class="_vtcal-md _mgr-1px" src="/images/mail.png" alt="send mail" width="15px" height="15px">
 				<span class="_vtcal-md">contact@moonrhythm.io</span>
 			</a>
 		</div>
@@ -108,7 +107,8 @@
 <script>
 const $navbar = $('[data-module="navbar"]')
 	$(window).on('scroll', function () {
-		if (window.scrollY > 100) {
+		var heroHeight = $('.hero').height();
+		if (window.scrollY > heroHeight) {
 			$navbar.addClass('u-rise-1 is-sticky')
 		} else {
 			$navbar.removeClass('u-rise-1 is-sticky')
