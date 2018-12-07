@@ -107,7 +107,7 @@
 <script>
 const $navbar = $('[data-module="navbar"]')
 	$(window).on('scroll', function () {
-		var heroHeight = $('.hero').height();
+		var heroHeight = $('.hero').height() - 20;
 		if (window.scrollY > heroHeight) {
 			$navbar.addClass('u-rise-1 is-sticky')
 		} else {

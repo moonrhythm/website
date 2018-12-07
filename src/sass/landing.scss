@@ -47,7 +47,7 @@ section.hero {
 	position: relative;
 	width: 100%;
 	min-height: 100vh;
-	--overlay: rgba(11, 11, 13, 0.8);
+	--overlay: rgba(11, 11, 13, 0.9);
 	background-image: linear-gradient(var(--overlay),
 		var(--overlay)),
 		url("/images/bg-full-desktop.jpg");
