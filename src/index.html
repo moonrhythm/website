@@ -4,41 +4,43 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/png" href="/0971958d-7be2-46c3-b299-721d606b8ed0.png">
+
+<link rel="preload" as="script" href="https://unpkg.com/cash-dom@2.3.9/dist/cash.min.js">
+<link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 <link rel="stylesheet" href="/css/moonrhythm.min.css">
 
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-<meta http-equiv="Pragma" content="no-cache" />
-<meta http-equiv="Expires" content="0" />
-
-<div class="nav">
+<div class="nav" data-module="navbar">
 	<div class="_dp-f _jtfct-spbtw">
-		<a href="/" class="moon-spacing _cl-title-second">MOONRHYTHM</a>
-		<a href="#" class="moon-spacing _cl-title-second">CONTACT</a>
+		<a href="/" class="moon-spacing nav-item">MOON RHYTHM</a>
+		<a href="#footer" class="moon-spacing nav-item">CONTACT</a>
 	</div>
 </div>
 
 <section class="hero _dp-f _alit-ct _jtfct-fs _jtfct-ct-md _fdrt-cl">
-	<div class="logo">
+	<div class="logo animated fadeIn is-fade-1">
 		<img src="/logo/moonrhythm-logo.png" alt="moonrhythm-logo">
 	</div>
 	<div class="about">
-		<h3 class="_fs-6 _cl-subtitle _mgbt-10px">ABOUT US</h3>
-		<h1 class="_cl-title-second _fs-5 moon-spacing-1 _fs-1-md">SOFTWARE DEVELOPMENT <br>TEAM.</h1>
+		<h3 class="_fs-6 _cl-subtitle _mgbt-10px animated fadeIn">ABOUT US</h3>
+		<h1 class="_cl-title-second _fs-5 moon-spacing-1 _fs-1-md animated fadeIn is-fade-3">SOFTWARE DEVELOPMENT <br>TEAM.</h1>
 		<div class="_dp-f _fdrt-cl _fdrt-r-md _mgt-24px">
-			<div class="_f-1 _bdtw-1px _bdcl-title-second _mgr-120px _mgt-10px-md"></div>
+			<div class="_f-1 _bdtw-1px _bdcl-title-second _mgr-120px _mgr-40px-md _mgt-10px-md animated fadeInUp is-fade-0"></div>
 			<div class="_f-1 _mgt-16px _mgt-0px-md">
-				<p class="_cl-subtitle">
-					Moon Rhythm is a software development team, established in 2010 around the internet. We provide top quality services with love.
+				<p class="_cl-subtitle animated fadeIn is-fade-4">
+					Moon Rhythm is a software development team, established in 2010 around the internet.<br>
+					We provide top quality services with love.
 				</p>
 			</div>
 		</div>
 	</div>
-	<div class="arrow _dp-f _alit-ct _jtfct-ct">
+	<a href="#service" class="arrow _dp-f _alit-ct _jtfct-ct animated fadeInUp is-fade-5">
 		<img src="/images/down-arrow.svg" width="15px" height="15px">
-	</div>
+	</a>
 </section>
 
-<section class="_dp-f _alit-ct _fdrt-cl _pdv-50px container">
+<section id="service" class="_dp-f _alit-ct _fdrt-cl _pdv-50px container">
 	<h2 class="_cl-subtitle moon-spacing _fs-6 _fw-bold _mgbt-16px">Service</h2>
 	<h4 class="_cl-title _fw-bold _fs-4 _tal-ct _fs-2-md _mgbt-80px _mgbt-120px-md">DELIVERING QUALITY SERVICES.</h4>
 
@@ -83,8 +85,8 @@
 	</div>
 </section>
 
-<footer>
-	<div class="container _pdt-120px-lg _pdbt-32px">
+<footer id="footer">
+	<div class="container _pdt-120px-md _pdbt-32px">
 		<h2 class="_cl-title moon-spacing _mgbt-10px _fs-5 _fw-400">MOON RHYTHM</h2>
 		<p class="_cl-subtitle-second _fs-7 _mgbt-50px">
 			Moon Rhythm is a software development team, established in 2010 around the internet.<br>
@@ -101,3 +103,15 @@
 		</div>
 	</div>
 </footer>
+
+<script src="https://unpkg.com/cash-dom@2.3.9/dist/cash.min.js"></script>
+<script>
+const $navbar = $('[data-module="navbar"]')
+	$(window).on('scroll', function () {
+		if (window.scrollY > 100) {
+			$navbar.addClass('u-rise-1 is-sticky')
+		} else {
+			$navbar.removeClass('u-rise-1 is-sticky')
+		}
+	})
+</script>

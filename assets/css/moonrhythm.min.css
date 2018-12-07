@@ -13336,6 +13336,21 @@ hr {
   z-index: 1;
 }
 
+.nav .nav-item {
+  color: #FFFFFF;
+}
+
+.nav.is-sticky {
+  padding: 25px 45px;
+  background-color: #fff;
+  -webkit-box-shadow: #ced4da 0px -5px 15px 0px;
+          box-shadow: #ced4da 0px -5px 15px 0px;
+}
+
+.nav.is-sticky .nav-item {
+  color: #0B0B0D;
+}
+
 .moon-spacing {
   letter-spacing: 0.3em;
 }
@@ -13353,8 +13368,8 @@ section.hero {
   width: 100%;
   min-height: 100vh;
   --overlay: rgba(11, 11, 13, 0.8);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(var(--overlay)), to(var(--overlay))), url(https://apex-inc.imgix.net/images/backgrounds/2.jpg?q=50&w=1500);
-  background-image: linear-gradient(var(--overlay), var(--overlay)), url(https://apex-inc.imgix.net/images/backgrounds/2.jpg?q=50&w=1500);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(var(--overlay)), to(var(--overlay))), url("/images/bg-full-desktop.jpg");
+  background-image: linear-gradient(var(--overlay), var(--overlay)), url("/images/bg-full-desktop.jpg");
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -13431,6 +13446,36 @@ section.hero .arrow {
 section.contact {
   border-left: 2px solid #868F96;
   border-right: 2px solid #868F96;
+}
+
+.is-fade-0 {
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+}
+
+.is-fade-1 {
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+}
+
+.is-fade-2 {
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+}
+
+.is-fade-3 {
+  -webkit-animation-duration: 4.5s;
+          animation-duration: 4.5s;
+}
+
+.is-fade-4 {
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+}
+
+.is-fade-5 {
+  -webkit-animation-duration: 7s;
+          animation-duration: 7s;
 }
 
 @media (min-width: 340px) {
