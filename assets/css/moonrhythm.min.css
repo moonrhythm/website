@@ -13391,7 +13391,6 @@ section.hero .about {
 section.hero .arrow {
   position: absolute;
   bottom: 30px;
-  left: 50%;
   width: 30px;
   height: 30px;
   -webkit-transform: translateX(-50%);
@@ -13511,6 +13510,13 @@ section.contact {
   }
   .container {
     max-width: 950px;
+  }
+}
+
+@media (min-width: 1080px) {
+  section.hero .logo,
+  section.hero .about {
+    margin-top: 150px;
   }
 }
 
