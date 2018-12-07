@@ -25,6 +25,7 @@
   "dependencies": {
     "biomatic": "^0.3.8",
     "firebase-tools": "^4.2.1",
+    "gulp-purgecss": "^1.1.1",
     "html-minifier": "^3.5.20"
   }
 }
