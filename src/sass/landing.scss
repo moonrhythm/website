@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700');
+
+.nav {
+	display: none;
+	position: fixed;
+	left: 0;
+	right: 0;
+	width: 100%;
+	padding: 50px 10px;
+	z-index: 1;
+}
+
+.moon-spacing {
+	letter-spacing: 0.3em;
+}
+
+.moon-spacing-1 {
+	letter-spacing: 0.1em;
+}
+
+._fw-bold {
+	font-weight: bold;
+}
+
+section.hero {
+	position: relative;
+	width: 100%;
+	min-height: 100vh;
+	--overlay: rgba(11, 11, 13, 0.8);
+	background-image: linear-gradient(var(--overlay),
+		var(--overlay)),
+		url(https://apex-inc.imgix.net/images/backgrounds/2.jpg?q=50&w=1500);
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	.logo {
+		margin-top: 20px;
+
+		img {
+			max-width: 200px;
+		}
+	}
+
+	.about {
+		margin-top: 20px;
+		padding: 0 25px;
+	}
+
+	.arrow {
+		position: absolute;
+		bottom: 30px;
+		left: 50%;
+		width: 30px;
+		height: 30px;
+		transform: translateX(-50%);
+		border: 1px solid #fff;
+		border-radius: 100%;
+	}
+}
+
+.service-box {
+	position: relative;
+	display: block;
+	margin: 0 auto;
+	max-width: 460px;
+
+	.service-title {
+		text-align: center;
+		color: $color-title;
+		font-size: 18px;
+		font-weight: 500;
+		margin-bottom: 40px;
+		letter-spacing: 0.1em;
+	}
+
+	.service-line {
+		position: absolute;
+		top: 25%;
+		left: 50%;
+		width: 140px;
+		height: 1px;
+		transform: translateX(-50%);
+		background-color: $color-line;
+	}
+
+	.service-text {
+		text-align: center;
+		color: $color-subtitle-second;
+		font-size: 14px;
+		font-weight: 400;
+	}
+}
+
+.container {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 320px;
+	text-align: left;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+section.contact {
+	border-left: 2px solid $color-line;
+	border-right: 2px solid $color-line;
+}
+
+@media (min-width: 340px) {
+	section.hero {
+
+		.logo,
+		.about {
+			margin-top: 80px;
+		}
+	}
+}
+
+@media (min-width: 400px) {
+	section.hero {
+		.logo,
+		.about {
+			margin-top: 100px;
+		}
+	}
+
+	.container {
+		max-width: 700px;
+	}
+}
+
+@media (min-width: 770px) {
+	.nav {
+		display: block;
+		padding: 50px 45px 0;
+	}
+
+	section.hero {
+		.logo {
+			margin-top: 0;
+
+			img {
+				max-width: 280px;
+			}
+		}
+	}
+
+	.service-box {
+		.service-line {
+			top: 40%;
+		}
+	}
+
+	.container {
+		max-width: 950px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.container {
+		max-width: 1170px;
+	}
+}

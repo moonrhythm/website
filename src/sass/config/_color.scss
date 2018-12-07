@@ -1,6 +1,27 @@
-$color-dark: #000;
+
+$color-main: #0B0B0D;
+$color-second: #FFFFFF;
+$color-footer: #212429;
+$color-line: #868F96;
+
+$color-title: #0B0B0D;
+$color-title-second: #FFFFFF;
+
+$color-subtitle: #959BA0;
+$color-subtitle-second: #646768;
+
+// biomatic color
+$color-dark: $color-title;
 
 $colors: (
+	'main': $color-main,
+	'second': $color-second,
+	'footer': $color-footer,
+	'line': $color-line,
+	'title': $color-title,
+	'title-second': $color-title-second,
+	'subtitle': $color-subtitle,
+	'subtitle-second': $color-subtitle-second,
 	'crcl': currentColor,
 	'tpr': transparent
 );

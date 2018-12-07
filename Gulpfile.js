@@ -13,6 +13,8 @@ gulp.task('dev', function () {
 	build('./src/sass/main.scss', 'moonrhythm')
 })
 
+gulp.task('watch', () => gulp.watch('src/sass/**/*.scss', ['dev']))
+
 function build(source, basename, compress = false, suffix = '.min') {
 	sassOption.outputStyle = compress == true ? 'compressed' : 'expanded'
 	gulp.src(source)
