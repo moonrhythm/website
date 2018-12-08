@@ -15,13 +15,7 @@ const sassOption = {
 	includePaths: 'node_modules'
 }
 
-gulp.task('style', () => gulp
-	.src('./src/sass/main.scss')
-	.pipe(sass(sassOption).on('error', sass.logError))
-	.pipe(autoprefixer({ browsers: ['last 2 versions'] }))
-	.pipe(concat('style.css'))
-	.pipe(gulp.dest(path.join(outputDir, 'css')))
-)
+gulp.task('style', compileScss)
 
 gulp.task('critical', () => gulp
 	.src('./src/*.html')
@@ -45,10 +39,17 @@ gulp.task('critical', () => gulp
 	.pipe(gulp.dest(outputDir))
 )
 
-gulp.task('dev', function () {
-	return build('./src/sass/main.scss')
-})
+gulp.task('dev', () => compileScss)
 
 gulp.task('watch', () => gulp.watch('src/sass/**/*.scss', ['dev']))
 
 gulp.task('default', runSequence('style', 'critical'))
+
+function compileScss () {
+	return gulp
+		.src('./src/sass/main.scss')
+		.pipe(sass(sassOption).on('error', sass.logError))
+		.pipe(autoprefixer({ browsers: ['last 2 versions'] }))
+		.pipe(concat('style.css'))
+		.pipe(gulp.dest(path.join(outputDir, 'css')))
+}
