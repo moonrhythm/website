@@ -10,28 +10,36 @@ const sassOption = {
 	includePaths: 'node_modules'
 }
 
-gulp.task('dev', function () {
-	build('./src/sass/main.scss', 'moonrhythm')
+gulp.task('default', function () {
+	return build('./src/sass/main.scss', true)
 })
 
-gulp.task('prod', function () {
-	build('./src/sass/main.scss', 'moonrhythm', true)
+gulp.task('dev', function () {
+	return build('./src/sass/main.scss')
 })
 
 gulp.task('watch', () => gulp.watch('src/sass/**/*.scss', ['dev']))
 
-function build(source, basename, compress = false, suffix = '.min') {
-	sassOption.outputStyle = compress == true ? 'compressed' : 'expanded'
-	gulp.src(source)
-	.pipe(sass(sassOption).on('error', sass.logError))
-	// .pipe(purgecss({ content: ['./src/**/*.html'] }))
-	.pipe(autoprefixer({
-		browsers: ['last 2 versions']
-	}))
-	.pipe(rename({
-		basename: basename,
-		suffix: suffix,
-		extname: '.css'
-	}))
-	.pipe(gulp.dest(output))
+function build (source, compress = false) {
+	sassOption.outputStyle = compress ? 'compressed' : 'expanded'
+
+	let flow = gulp.src(source)
+		.pipe(sass(sassOption).on('error', sass.logError))
+
+	if (compress) {
+		flow = flow
+			.pipe(purgecss({ content: ['./public/**/*.html'] }))
+	}
+
+	flow = flow
+		.pipe(autoprefixer({
+			browsers: ['last 2 versions']
+		}))
+		.pipe(rename({
+			basename: 'style',
+			extname: '.css'
+		}))
+		.pipe(gulp.dest(output))
+
+	return flow
 }

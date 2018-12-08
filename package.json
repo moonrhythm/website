@@ -11,8 +11,9 @@
     "build:clean": "rm -rf public/",
     "build:prepare": "mkdir -p public",
     "build:assets": "cp -r assets/* public/",
+    "build:style": "gulp",
     "build:html": "html-minifier --collapse-boolean-attributes --collapse-inline-tag-whitespace --collapse-whitespace --minify-css --minify-js --minify-urls --remove-attribute-quotes --remove-comments --remove-empty-attributes --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-style-link-type-attributes --remove-tag-whitespace --input-dir src --output-dir public",
-    "build": "yarn build:clean && yarn build:prepare && yarn build:assets && yarn build:html",
+    "build": "yarn build:clean && yarn build:prepare && yarn build:assets && yarn build:html && yarn build:style",
     "deploy": "firebase deploy --token $FIREBASE_TOKEN"
   },
   "devDependencies": {
