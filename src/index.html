@@ -106,7 +106,12 @@
 !function () {
 	const $navbar = document.getElementById('nav')
 	const $hero = document.getElementById('hero')
-	window.addEventListener('scroll', () => {
+
+	let scrolling = false
+
+	const onScroll = () => {
+		scrolling = false
+
 		const heroHeight = $hero.clientHeight - 20
 		if (window.scrollY > heroHeight) {
 			$navbar.classList.add('u-rise-1')
@@ -115,6 +120,15 @@
 			$navbar.classList.remove('u-rise-1')
 			$navbar.classList.remove('is-sticky')
 		}
+	}
+
+	window.addEventListener('scroll', () => {
+		if (scrolling) {
+			return
+		}
+
+		scrolling = true
+		setTimeout(onScroll, 150)
 	})
 }()
 </script>
