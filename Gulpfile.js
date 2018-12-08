@@ -41,7 +41,9 @@ gulp.task('critical', () => gulp
 		base: tempDir,
 		inline: true,
 		minify: true,
-		css: [ path.join(tempDir, 'css', 'style.css') ]
+		css: [ path.join(tempDir, 'css', 'style.css') ],
+		width: 10000,
+		height: 10000
 	}))
 	.on('error', err => { console.error(err.message) })
 	.pipe(htmlmin({
