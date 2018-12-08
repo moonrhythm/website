@@ -7,7 +7,7 @@
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
-    "dev": "live-server --mount=/:assets/ src/",
+    "dev": "live-server --mount=/:assets/ --mount=/:.build/ src/",
     "watch": "gulp watch",
     "build": "gulp",
     "deploy": "firebase deploy --token $FIREBASE_TOKEN"
