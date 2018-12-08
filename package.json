@@ -9,28 +9,22 @@
   "scripts": {
     "dev": "live-server --mount=/:assets/ src/",
     "watch": "gulp watch",
-    "build:clean": "rm -rf public/",
-    "build:prepare": "mkdir -p public",
-    "build:assets": "cp -r assets/* public/",
-    "build:style": "gulp",
-    "build:html": "html-minifier --collapse-boolean-attributes --collapse-inline-tag-whitespace --collapse-whitespace --minify-css --minify-js --minify-urls --remove-attribute-quotes --remove-comments --remove-empty-attributes --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-style-link-type-attributes --remove-tag-whitespace --input-dir src --output-dir public",
-    "build": "yarn build:clean && yarn build:prepare && yarn build:assets && yarn build:html && yarn build:style",
+    "build": "gulp",
     "deploy": "firebase deploy --token $FIREBASE_TOKEN"
-  },
-  "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^6.0.0",
-    "gulp-sass": "^4.0.2",
-    "live-server": "^1.2.0"
   },
   "dependencies": {
     "biomatic": "^0.3.8",
     "critical": "^1.3.4",
     "firebase-tools": "^4.2.1",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-clean": "^0.4.0",
     "gulp-concat": "^2.6.1",
     "gulp-htmlmin": "^5.0.1",
     "gulp-remove-code": "^3.0.4",
+    "gulp-sass": "^4.0.2",
     "html-minifier": "^3.5.20",
+    "live-server": "^1.2.0",
     "run-sequence": "^2.2.1"
   }
 }
