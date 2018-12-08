@@ -11,6 +11,7 @@ const clean = require('gulp-clean')
 
 const tempDir = './.build'
 const outputDir = './public'
+const assetsDir = path.join(outputDir, '-')
 
 const sassOption = {
 	outputStyle: 'compressed',
@@ -23,7 +24,7 @@ gulp.task('clean', ['clean-temp', 'clean-output'])
 
 gulp.task('assets', () => gulp
 	.src('./assets/**/*')
-	.pipe(gulp.dest(outputDir))
+	.pipe(gulp.dest(assetsDir))
 )
 
 gulp.task('style', () => gulp
