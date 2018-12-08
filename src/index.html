@@ -6,7 +6,9 @@
 <link rel="icon" type="image/png" href="/favicon-zgo3.png">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+<!--removeIf(production)-->
 <link rel="stylesheet" href="/css/style.css">
+<!--endRemoveIf(production)-->
 
 <div id="nav" class="nav">
 	<div class="_dp-f _jtfct-spbtw">
@@ -104,15 +106,15 @@
 
 <script>
 !function () {
-	const $navbar = document.getElementById('nav')
-	const $hero = document.getElementById('hero')
+	var $navbar = document.getElementById('nav')
+	var $hero = document.getElementById('hero')
 
-	let scrolling = false
+	var scrolling = false
 
-	const onScroll = () => {
+	var onScroll = function () {
 		scrolling = false
 
-		const heroHeight = $hero.clientHeight - 20
+		var heroHeight = $hero.clientHeight - 20
 		if (window.scrollY > heroHeight) {
 			$navbar.classList.add('u-rise-1')
 			$navbar.classList.add('is-sticky')
@@ -122,7 +124,7 @@
 		}
 	}
 
-	window.addEventListener('scroll', () => {
+	window.addEventListener('scroll', function () {
 		if (scrolling) {
 			return
 		}

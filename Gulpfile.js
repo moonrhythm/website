@@ -1,18 +1,49 @@
 const gulp = require('gulp')
+const concat = require('gulp-concat')
 const sass = require('gulp-sass')
 const autoprefixer = require('gulp-autoprefixer')
-const rename = require('gulp-rename')
-const purgecss = require('gulp-purgecss')
+const path = require('path')
+const critical = require('critical').stream
+const htmlmin = require('gulp-htmlmin')
+const removeCode = require('gulp-remove-code')
+const runSequence = require('run-sequence')
 
-const output = './assets/css'
+const outputDir = './public'
+
 const sassOption = {
 	outputStyle: 'compressed',
 	includePaths: 'node_modules'
 }
 
-gulp.task('default', function () {
-	return build('./src/sass/main.scss', true)
-})
+gulp.task('style', () => gulp
+	.src('./src/sass/main.scss')
+	.pipe(sass(sassOption).on('error', sass.logError))
+	.pipe(autoprefixer({ browsers: ['last 2 versions'] }))
+	.pipe(concat('style.css'))
+	.pipe(gulp.dest(path.join(outputDir, 'css')))
+)
+
+gulp.task('critical', () => gulp
+	.src('./src/*.html')
+	.pipe(removeCode({ production: true }))
+	.pipe(critical({
+			base: outputDir,
+			inline: true,
+			minify: true,
+			css: [path.join(outputDir, 'css', 'style.css')]
+		}))
+	.on('error', err => { console.error(err.message) })
+	.pipe(
+		htmlmin({
+			minifyJS: true,
+			removeComments: true,
+			collapseWhitespace: true,
+			removeOptionalTags: true,
+			removeScriptTypeAttributes: true
+		})
+	)
+	.pipe(gulp.dest(outputDir))
+)
 
 gulp.task('dev', function () {
 	return build('./src/sass/main.scss')
@@ -20,26 +51,4 @@ gulp.task('dev', function () {
 
 gulp.task('watch', () => gulp.watch('src/sass/**/*.scss', ['dev']))
 
-function build (source, compress = false) {
-	sassOption.outputStyle = compress ? 'compressed' : 'expanded'
-
-	let flow = gulp.src(source)
-		.pipe(sass(sassOption).on('error', sass.logError))
-
-	if (compress) {
-		flow = flow
-			.pipe(purgecss({ content: ['./public/**/*.html'] }))
-	}
-
-	flow = flow
-		.pipe(autoprefixer({
-			browsers: ['last 2 versions']
-		}))
-		.pipe(rename({
-			basename: 'style',
-			extname: '.css'
-		}))
-		.pipe(gulp.dest(output))
-
-	return flow
-}
+gulp.task('default', runSequence('style', 'critical'))

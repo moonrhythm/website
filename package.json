@@ -20,14 +20,17 @@
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^6.0.0",
-    "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
     "live-server": "^1.2.0"
   },
   "dependencies": {
     "biomatic": "^0.3.8",
+    "critical": "^1.3.4",
     "firebase-tools": "^4.2.1",
-    "gulp-purgecss": "^1.1.1",
-    "html-minifier": "^3.5.20"
+    "gulp-concat": "^2.6.1",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-remove-code": "^3.0.4",
+    "html-minifier": "^3.5.20",
+    "run-sequence": "^2.2.1"
   }
 }
