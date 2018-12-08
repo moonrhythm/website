@@ -3,3 +3,5 @@
 *.log
 public/
 node_modules/
+assets/css/style.css
+.build/
