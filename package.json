@@ -8,6 +8,7 @@
   "private": true,
   "scripts": {
     "dev": "live-server --mount=/:assets/ src/",
+    "watch": "gulp watch",
     "build:clean": "rm -rf public/",
     "build:prepare": "mkdir -p public",
     "build:assets": "cp -r assets/* public/",
