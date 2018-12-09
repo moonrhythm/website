@@ -1,4 +1,4 @@
-default: clean build deploy
+default: build deploy
 
 dev:
 	live-server --mount=/-/:assets/ --mount=/:.build/ src/
@@ -6,8 +6,8 @@ dev:
 watch:
 	gulp watch
 
-build:
-	yarn build
+build: clean
+	gulp
 
 clean:
 	rm -rf .build
