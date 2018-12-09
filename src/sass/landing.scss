@@ -51,15 +51,13 @@ section.hero {
 	--overlay: rgba(11, 11, 13, 0.9);
 	background-image: linear-gradient(var(--overlay),
 		var(--overlay)),
-		url("/-/images/bg-full-desktop.jpg");
+		url("/-/images/bg-2ihu.jpg");
 	background-position: 50% 50%;
 	background-repeat: no-repeat;
 	background-size: cover;
 
 	.logo {
-		img {
-			max-width: 200px;
-		}
+		max-width: 300px;
 	}
 
 	.about {
@@ -159,10 +157,7 @@ section.contact {
 		padding: 0;
 		.logo {
 			margin-top: 100px;
-
-			img {
-				max-width: 280px;
-			}
+			max-width: 280px;
 		}
 	}
 
