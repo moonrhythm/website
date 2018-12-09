@@ -7,11 +7,15 @@ Moon Rhythm Website
 ## Development
 
 ```sh
-yarn watch
+make dev
 ```
 
-and `yarn dev` (btw. we should combine watch and dev together but I'm too lazy :P)
+and `make watch` (btw. we should combine watch and dev together)
 
-## Production build
+## Build
 
-`yarn build` will build production to `public` directory.
+`make build` will build production to `public` directory.
+
+## Deployment
+
+`make` will build and deploy to `gs://www.moonrhythm.io`
