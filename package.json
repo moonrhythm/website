@@ -6,9 +6,6 @@
   "author": "Moon Rhythm",
   "license": "UNLICENSED",
   "private": true,
-  "scripts": {
-    "deploy": "firebase deploy --token $FIREBASE_TOKEN"
-  },
   "dependencies": {
     "biomatic": "^0.3.8",
     "critical": "^1.3.4",
