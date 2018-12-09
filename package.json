@@ -7,9 +7,6 @@
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
-    "dev": "live-server --mount=/-/:assets/ --mount=/:.build/ src/",
-    "watch": "gulp watch",
-    "build": "gulp",
     "deploy": "firebase deploy --token $FIREBASE_TOKEN"
   },
   "dependencies": {
@@ -18,7 +15,6 @@
     "firebase-tools": "^4.2.1",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^6.0.0",
-    "gulp-clean": "^0.4.0",
     "gulp-concat": "^2.6.1",
     "gulp-htmlmin": "^5.0.1",
     "gulp-remove-code": "^3.0.4",

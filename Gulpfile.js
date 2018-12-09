@@ -7,7 +7,6 @@ const critical = require('critical').stream
 const htmlmin = require('gulp-htmlmin')
 const removeCode = require('gulp-remove-code')
 const runSequence = require('run-sequence')
-const clean = require('gulp-clean')
 
 const tempDir = './.build'
 const outputDir = './public'
@@ -17,10 +16,6 @@ const sassOption = {
 	outputStyle: 'compressed',
 	includePaths: 'node_modules'
 }
-
-gulp.task('clean-temp', () => gulp.src(tempDir).pipe(clean({ force: true })))
-gulp.task('clean-output', () => gulp.src(tempDir).pipe(clean({ force: true })))
-gulp.task('clean', ['clean-temp', 'clean-output'])
 
 gulp.task('assets', () => gulp
 	.src('./assets/**/*')
@@ -59,4 +54,4 @@ gulp.task('critical', () => gulp
 
 gulp.task('watch', () => gulp.watch('src/sass/**/*.scss', ['style']))
 
-gulp.task('default', runSequence('clean', 'assets', 'style', 'critical'))
+gulp.task('default', runSequence('assets', 'style', 'critical'))
