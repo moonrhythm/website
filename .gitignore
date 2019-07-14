@@ -6,3 +6,4 @@ node_modules/
 assets/css/style.css
 .build/
 package-lock.json
+.idea
