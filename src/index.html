@@ -10,7 +10,7 @@
 <meta property="og:image:height" content="700">
 <link rel="icon" type="image/png" href="/-/favicon-zgo3.png">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
 <!--removeIf(production)-->
 <link rel="stylesheet" href="/css/style.css">
 <!--endRemoveIf(production)-->
@@ -95,21 +95,21 @@
 
 <script>
 !function () {
-	var $navbar = document.getElementById('nav')
-	var $hero = document.getElementById('hero')
+	const $nav = document.getElementById('nav')
+	const $hero = document.getElementById('hero')
 
-	var scrolling = false
+	let scrolling = false
 
-	var onScroll = function () {
+	const onScroll = function () {
 		scrolling = false
 
-		var heroHeight = $hero.clientHeight - 20
+		const heroHeight = $hero.clientHeight - 20
 		if (window.scrollY > heroHeight) {
-			$navbar.classList.add('u-rise-1')
-			$navbar.classList.add('is-sticky')
+			$nav.classList.add('u-rise-1')
+			$nav.classList.add('is-sticky')
 		} else {
-			$navbar.classList.remove('u-rise-1')
-			$navbar.classList.remove('is-sticky')
+			$nav.classList.remove('u-rise-1')
+			$nav.classList.remove('is-sticky')
 		}
 	}
 
