@@ -33,10 +33,11 @@ function minify () {
 	return src('./src/*.html')
 		.pipe(removeCode({ production: true }))
 		.pipe(critical({
-			base: tempDir,
+			base: path.join(tempDir, 'css'),
 			inline: true,
 			minify: true,
 			css: [ path.join(tempDir, 'css', 'style.css') ],
+			pathPrefix: '',
 			width: 10000,
 			height: 10000
 		}))
