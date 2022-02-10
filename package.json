@@ -20,7 +20,7 @@
     "gulp-sass": "^4.0.2",
     "html-minifier": "^4.0.0",
     "live-server": "^1.2.0",
-    "node-sass": "^4.13.1"
+    "node-sass": "^7.0.0"
   },
   "browserslist": [
     "last 2 versions"
