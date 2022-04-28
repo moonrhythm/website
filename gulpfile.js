@@ -1,6 +1,6 @@
 const { src, dest, series, watch } = require('gulp')
 const concat = require('gulp-concat')
-const sass = require('gulp-sass')
+const sass = require('gulp-sass')(require('node-sass'))
 const autoprefixer = require('gulp-autoprefixer')
 const path = require('path')
 const critical = require('critical').stream

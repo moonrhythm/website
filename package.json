@@ -17,10 +17,10 @@
     "gulp-concat": "^2.6.1",
     "gulp-htmlmin": "^5.0.1",
     "gulp-remove-code": "^3.0.4",
-    "gulp-sass": "^4.0.2",
+    "gulp-sass": "^5.1.0",
     "html-minifier": "^4.0.0",
     "live-server": "^1.2.0",
-    "node-sass": "^4.13.1"
+    "node-sass": "^7.0.1"
   },
   "browserslist": [
     "last 2 versions"
