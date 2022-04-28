@@ -2,10 +2,10 @@ dev:
 	live-server --mount=/-/:assets/ --mount=/:.build/ src/
 
 watch:
-	yarn run gulp watch
+	npx gulp watch
 
 build: clean
-	yarn run gulp
+	npx gulp
 
 clean:
 	rm -rf .build
