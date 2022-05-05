@@ -6,3 +6,11 @@ node_modules/
 assets/css/style.css
 .build/
 .idea
+
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
