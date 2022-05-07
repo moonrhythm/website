@@ -1,0 +1,9 @@
+._islt-at  { isolation: auto !important; }
+._islt-isl { isolation: isolate !important; }
+
+@each $breakpointName, $breakpointSize in $breakpoints {
+	@media (min-width: $breakpointSize) {
+		._islt-at-#{$breakpointName}  { isolation: auto !important; }
+		._islt-isl-#{$breakpointName} { isolation: isolate !important; }
+	};
+};

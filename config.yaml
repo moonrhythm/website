@@ -1,0 +1,7 @@
+baseURL: 'https://www.moonrhythm.io/'
+languageCode: 'en-us'
+title: 'Moon Rhythm'
+disableKinds:
+- taxonomy
+ignoreErrors:
+- error-disable-taxonomy

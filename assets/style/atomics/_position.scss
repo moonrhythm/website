@@ -1,0 +1,13 @@
+._pst-stt { position: static !important; }
+._pst-rlt { position: relative !important; }
+._pst-asl { position: absolute !important; }
+._pst-f   { position: fixed !important; }
+
+@each $breakpointName, $breakpointSize in $breakpoints {
+	@media (min-width: $breakpointSize) {
+		._pst-stt-#{$breakpointName} { position: static !important; }
+		._pst-rlt-#{$breakpointName} { position: relative !important; }
+		._pst-asl-#{$breakpointName} { position: absolute !important; }
+		._pst-f-#{$breakpointName}   { position: fixed !important; }
+	};
+};

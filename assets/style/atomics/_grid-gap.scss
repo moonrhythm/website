@@ -1,0 +1,15 @@
+@each $key, $value in $spacings {
+	._gg-#{$key} { grid-gap: #{$value} !important; }
+	._grg-#{$key} { grid-row-gap: #{$value} !important; }
+	._gclg-#{$key} { grid-column-gap: #{$value} !important; }
+};
+
+@each $breakpointName, $breakpointSize in $breakpoints {
+	@media (min-width: $breakpointSize) {
+		@each $key, $value in $spacings {
+			._gg-#{$key}-#{$breakpointName} { grid-gap: #{$value} !important; }
+			._grg-#{$key}-#{$breakpointName} { grid-row-gap: #{$value} !important; }
+			._gclg-#{$key}-#{$breakpointName} { grid-column-gap: #{$value} !important; }
+		};
+	};
+};

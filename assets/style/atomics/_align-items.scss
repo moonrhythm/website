@@ -1,0 +1,17 @@
+._alit-st  { align-items: start !important; }
+._alit-e   { align-items: end !important; }
+._alit-ct  { align-items: center !important; }
+._alit-str { align-items: stretch !important; }
+._alit-fst { align-items: flex-start !important; }
+._alit-fe  { align-items: flex-end !important; }
+
+@each $breakpointName, $breakpointSize in $breakpoints {
+	@media (min-width: $breakpointSize) {
+		._alit-st-#{$breakpointName}  { align-items: start !important; }
+		._alit-e-#{$breakpointName}   { align-items: end !important; }
+		._alit-ct-#{$breakpointName}  { align-items: center !important; }
+		._alit-str-#{$breakpointName} { align-items: stretch !important; }
+		._alit-fst-#{$breakpointName} { align-items: flex-start !important; }
+		._alit-fe-#{$breakpointName}  { align-items: flex-end !important; }
+	};
+};

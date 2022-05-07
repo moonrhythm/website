@@ -1,0 +1,11 @@
+._bgatm-sc { background-attachment: scroll !important; }
+._bgatm-f { background-attachment: fixed !important; }
+._bgatm-lc { background-attachment: local !important; }
+
+@each $breakpointName, $breakpointSize in $breakpoints {
+	@media (min-width: $breakpointSize) {
+		._bgatm-sc-#{$breakpointName} { background-attachment: scroll !important; }
+		._bgatm-f-#{$breakpointName} { background-attachment: fixed !important; }
+		._bgatm-lc-#{$breakpointName} { background-attachment: local !important; }
+	};
+};

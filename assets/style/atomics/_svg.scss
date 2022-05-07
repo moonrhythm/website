@@ -1,0 +1,9 @@
+._f-crcl   { fill: currentColor !important; }
+._st-crcl   { stroke: currentColor !important; }
+
+@each $breakpointName, $breakpointSize in $breakpoints {
+	@media (min-width: $breakpointSize) {
+		._f-crcl-#{$breakpointName}   { fill: currentColor !important; }
+		._st-crcl-#{$breakpointName}   { stroke: currentColor !important; }
+	};
+};

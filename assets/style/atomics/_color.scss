@@ -1,0 +1,19 @@
+@each $key, $value in $colors {
+	._cl-#{$key} { color: #{$value} !important; }
+};
+
+@each $breakpointName, $breakpointSize in $breakpoints {
+	@media (min-width: $breakpointSize) {
+		@each $key, $value in $colors {
+			._cl-#{$key}-#{$breakpointName} { color: #{$value} !important; }
+		};
+	};
+};
+
+@each $key, $value in $colors {
+	._cl-#{$key}-hover {
+		&:hover {
+			color: #{$value} !important;
+		}
+	}
+};

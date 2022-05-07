@@ -1,0 +1,19 @@
+._ltspc-1px  { letter-spacing: 1px !important; }
+._ltspc-2px  { letter-spacing: 2px !important; }
+._ltspc-4px  { letter-spacing: 4px !important; }
+._ltspc-8px  { letter-spacing: 8px !important; }
+._ltspc-16px { letter-spacing: 16px !important; }
+._ltspc-24px { letter-spacing: 24px !important; }
+._ltspc-32px { letter-spacing: 32px !important; }
+
+@each $breakpointName, $breakpointSize in $breakpoints {
+	@media (min-width: $breakpointSize) {
+		._ltspc-1px-#{$breakpointName}  { letter-spacing: 1px !important; }
+		._ltspc-2px-#{$breakpointName}  { letter-spacing: 2px !important; }
+		._ltspc-4px-#{$breakpointName}  { letter-spacing: 4px !important; }
+		._ltspc-8px-#{$breakpointName}  { letter-spacing: 8px !important; }
+		._ltspc-16px-#{$breakpointName} { letter-spacing: 16px !important; }
+		._ltspc-24px-#{$breakpointName} { letter-spacing: 24px !important; }
+		._ltspc-32px-#{$breakpointName} { letter-spacing: 32px !important; }
+	};
+};

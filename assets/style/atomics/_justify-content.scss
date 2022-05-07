@@ -1,0 +1,23 @@
+._jtfct-st    { justify-content: start !important; }
+._jtfct-e     { justify-content: end !important; }
+._jtfct-ct    { justify-content: center !important; }
+._jtfct-str   { justify-content: stretch !important; }
+._jtfct-fst   { justify-content: flex-start !important; }
+._jtfct-fe    { justify-content: flex-end !important; }
+._jtfct-spbtw { justify-content: space-between !important; }
+._jtfct-spar  { justify-content: space-around !important; }
+._jtfct-spevl { justify-content: space-evenly !important; }
+
+@each $breakpointName, $breakpointSize in $breakpoints {
+	@media (min-width: $breakpointSize) {
+		._jtfct-st-#{$breakpointName}    { justify-content: start !important; }
+		._jtfct-e-#{$breakpointName}     { justify-content: end !important; }
+		._jtfct-ct-#{$breakpointName}    { justify-content: center !important; }
+		._jtfct-str-#{$breakpointName}   { justify-content: stretch !important; }
+		._jtfct-fst-#{$breakpointName}   { justify-content: flex-start !important; }
+		._jtfct-fe-#{$breakpointName}    { justify-content: flex-end !important; }
+		._jtfct-spbtw-#{$breakpointName} { justify-content: space-between !important; }
+		._jtfct-spar-#{$breakpointName}  { justify-content: space-around !important; }
+		._jtfct-spevl-#{$breakpointName} { justify-content: space-evenly !important; }
+	};
+};

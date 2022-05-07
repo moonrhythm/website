@@ -1,0 +1,19 @@
+@each $key, $value in $radiuses {
+	._bdrd-#{$key}    { border-radius: #{$value} !important; }
+	._bdtlrd-#{$key}  { border-top-left-radius: #{$value} !important; }
+	._bdtrrd-#{$key}  { border-top-right-radius: #{$value} !important; }
+	._bdbtlrd-#{$key} { border-bottom-left-radius: #{$value} !important; }
+	._bdbtrrd-#{$key} { border-bottom-right-radius: #{$value} !important; }
+};
+
+@each $breakpointName, $breakpointSize in $breakpoints {
+	@media (min-width: $breakpointSize) {
+		@each $key, $value in $radiuses {
+			._bdrd-#{$key}-#{$breakpointName}    { border-radius: #{$value} !important; }
+			._bdtlrd-#{$key}-#{$breakpointName}  { border-top-left-radius: #{$value} !important; }
+			._bdtrrd-#{$key}-#{$breakpointName}  { border-top-right-radius: #{$value} !important; }
+			._bdbtlrd-#{$key}-#{$breakpointName} { border-bottom-left-radius: #{$value} !important; }
+			._bdbtrrd-#{$key}-#{$breakpointName} { border-bottom-right-radius: #{$value} !important; }
+		};
+	};
+};

@@ -1,0 +1,11 @@
+._f-l { float: left !important; }
+._f-r { float: right !important; }
+._f-n { float: none !important; }
+
+@each $breakpointName, $breakpointSize in $breakpoints {
+	@media (min-width: $breakpointSize) {
+		._f-l-#{$breakpointName} { float: left !important; }
+		._f-r-#{$breakpointName} { float: right !important; }
+		._f-n-#{$breakpointName} { float: none !important; }
+	};
+};

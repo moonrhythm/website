@@ -1,0 +1,23 @@
+._fw-100 { font-weight: 100 !important; }
+._fw-200 { font-weight: 200 !important; }
+._fw-300 { font-weight: 300 !important; }
+._fw-400 { font-weight: 400 !important; }
+._fw-500 { font-weight: 500 !important; }
+._fw-600 { font-weight: 600 !important; }
+._fw-700 { font-weight: 700 !important; }
+._fw-800 { font-weight: 800 !important; }
+._fw-900 { font-weight: 900 !important; }
+
+@each $breakpointName, $breakpointSize in $breakpoints {
+	@media (min-width: $breakpointSize) {
+		._fw-100-#{$breakpointName} { font-weight: 100 !important; }
+		._fw-200-#{$breakpointName} { font-weight: 200 !important; }
+		._fw-300-#{$breakpointName} { font-weight: 300 !important; }
+		._fw-400-#{$breakpointName} { font-weight: 400 !important; }
+		._fw-500-#{$breakpointName} { font-weight: 500 !important; }
+		._fw-600-#{$breakpointName} { font-weight: 600 !important; }
+		._fw-700-#{$breakpointName} { font-weight: 700 !important; }
+		._fw-800-#{$breakpointName} { font-weight: 800 !important; }
+		._fw-900-#{$breakpointName} { font-weight: 900 !important; }
+	};
+};

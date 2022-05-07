@@ -1,0 +1,17 @@
+._cs-pt  { cursor: pointer !important; }
+._cs-h   { cursor: help !important; }
+._cs-nal { cursor: not-allowed !important; }
+._cs-m   { cursor: move !important; }
+._cs-w   { cursor: wait !important; }
+._cs-at  { cursor: auto !important; }
+
+@each $breakpointName, $breakpointSize in $breakpoints {
+	@media (min-width: $breakpointSize) {
+		._cs-pt-#{$breakpointName}  { cursor: pointer !important; }
+		._cs-h-#{$breakpointName}   { cursor: help !important; }
+		._cs-nal-#{$breakpointName} { cursor: not-allowed !important; }
+		._cs-m-#{$breakpointName}   { cursor: move !important; }
+		._cs-w-#{$breakpointName}   { cursor: wait !important; }
+		._cs-at-#{$breakpointName}  { cursor: auto !important; }
+	};
+};

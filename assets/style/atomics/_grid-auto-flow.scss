@@ -1,0 +1,11 @@
+._gatf-r { grid-auto-flow: row !important }
+._gatf-cl { grid-auto-flow: column !important }
+._gatf-d { grid-auto-flow: dense !important }
+
+@each $breakpointName, $breakpointSize in $breakpoints {
+	@media (min-width: $breakpointSize) {
+		._gatf-r-#{$breakpointName} { grid-auto-flow: row !important }
+		._gatf-cl-#{$breakpointName} { grid-auto-flow: column !important }
+		._gatf-d-#{$breakpointName} { grid-auto-flow: dense !important }
+	};
+};

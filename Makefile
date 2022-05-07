@@ -1,12 +1,5 @@
 dev:
-	live-server --mount=/-/:assets/ --mount=/:.build/ src/
+	hugo server
 
-watch:
-	npx gulp watch
-
-build: clean
-	npx gulp
-
-clean:
-	rm -rf .build
-	rm -rf public
+build:
+	hugo

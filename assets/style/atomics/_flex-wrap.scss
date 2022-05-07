@@ -1,0 +1,11 @@
+._fw-nw { flex-wrap: nowrap; }
+._fw-w { flex-wrap: wrap; }
+._fw-wrv { flex-wrap: wrap-reverse; }
+
+@each $breakpointName, $breakpointSize in $breakpoints {
+	@media (min-width: $breakpointSize) {
+		._fw-nw-#{$breakpointName} { flex-wrap: nowrap !important; }
+		._fw-w-#{$breakpointName} { flex-wrap: wrap !important; }
+		._fw-wrv-#{$breakpointName} { flex-wrap: wrap-reverse !important; }
+	};
+};

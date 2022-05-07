@@ -1,0 +1,17 @@
+._als-st  { align-self: start !important; }
+._als-e   { align-self: end !important; }
+._als-fst { align-self: flex-start !important; }
+._als-fe  { align-self: flex-end !important; }
+._als-ct  { align-self: center !important; }
+._als-str { align-self: stretch !important; }
+
+@each $breakpointName, $breakpointSize in $breakpoints {
+	@media (min-width: $breakpointSize) {
+		._als-st-#{$breakpointName}  { align-self: start !important; }
+		._als-e-#{$breakpointName}   { align-self: end !important; }
+		._als-fst-#{$breakpointName} { align-self: flex-start !important; }
+		._als-fe-#{$breakpointName}  { align-self: flex-end !important; }
+		._als-ct-#{$breakpointName}  { align-self: center !important; }
+		._als-str-#{$breakpointName} { align-self: stretch !important; }
+	};
+};

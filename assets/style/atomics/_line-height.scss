@@ -1,0 +1,15 @@
+._lh-100pct { line-height: 100% !important; }
+._lh-125pct { line-height: 125% !important; }
+._lh-150pct { line-height: 150% !important; }
+._lh-175pct { line-height: 175% !important; }
+._lh-200pct { line-height: 200% !important; }
+
+@each $breakpointName, $breakpointSize in $breakpoints {
+	@media (min-width: $breakpointSize) {
+		._lh-100pct-#{$breakpointName} { line-height: 100% !important; }
+		._lh-125pct-#{$breakpointName} { line-height: 125% !important; }
+		._lh-150pct-#{$breakpointName} { line-height: 150% !important; }
+		._lh-175pct-#{$breakpointName} { line-height: 175% !important; }
+		._lh-200pct-#{$breakpointName} { line-height: 200% !important; }
+	};
+};

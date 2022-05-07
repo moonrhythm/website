@@ -1,0 +1,7 @@
+@import 'config/config';
+@import 'mixins/mixins';
+@import 'atomics/atomics';
+
+$bg-image: "{{ (resources.Get "images/bg.jpg" | resources.Fingerprint).RelPermalink }}";
+
+@import 'landing';

@@ -1,0 +1,13 @@
+._vtcal-t { vertical-align: top !important; }
+._vtcal-bt { vertical-align: bottom !important; }
+._vtcal-bl { vertical-align: baseline !important; }
+._vtcal-md { vertical-align: middle !important; }
+
+@each $breakpointName, $breakpointSize in $breakpoints {
+	@media (min-width: $breakpointSize) {
+		._vtcal-t-#{$breakpointName} { vertical-align: top !important; }
+		._vtcal-bt-#{$breakpointName} { vertical-align: bottom !important; }
+		._vtcal-bl-#{$breakpointName} { vertical-align: baseline !important; }
+		._vtcal-md-#{$breakpointName} { vertical-align: middle !important; }
+	};
+};
