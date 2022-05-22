@@ -1,4 +1,5 @@
-/style/*
-    Cache-Control: public, max-age=86400
-/images/*
-    Cache-Control: public, max-age=86400
+https://:project.pages.dev/*
+  x-robots-tag: noindex
+/*
+  strict-transport-security: max-age=31536000; includeSubDomains; preload
+  x-frame-options: DENY
