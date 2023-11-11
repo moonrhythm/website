@@ -2,6 +2,6 @@
 @import 'mixins/mixins';
 @import 'atomics/atomics';
 
-$bg-image: "{{ (resources.Get "images/bg.avif" | resources.Fingerprint).RelPermalink }}";
+$bg-image: "{{ (resources.Get "images/bg.jpg" | resources.Fingerprint).RelPermalink }}";
 
 @import 'landing';
