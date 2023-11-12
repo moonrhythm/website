@@ -3,3 +3,7 @@ https://:project.pages.dev/*
 /*
   strict-transport-security: max-age=31536000; includeSubDomains; preload
   x-frame-options: DENY
+/images/*
+  cache-control: public, max-age=604800
+/style/*
+  cache-control: public, max-age=604800
