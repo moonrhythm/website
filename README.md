@@ -7,6 +7,7 @@ Moon Rhythm Website
 ## Development
 
 ```sh
+asdf install
 make dev
 ```
 
