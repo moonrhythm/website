@@ -10,6 +10,7 @@
 <meta property="og:image:height" content="700">
 <link rel="icon" type="image/webp" href="/favicon-zgo3.webp">
 
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500,700">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
 {{ $style := resources.Get "style/main.scss" | resources.ExecuteAsTemplate "style/main.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}">
